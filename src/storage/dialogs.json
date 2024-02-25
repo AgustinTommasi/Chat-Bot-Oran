@@ -1,0 +1,62 @@
+{
+    "main": {
+        "code": "m",
+        "text": "¡Hola!! 👋 Soy el Municipal. Estoy para ayudarte con muchos de tus trámites de la Muni. 🦾\n\n*1*. ℹ️ ```Servicios```\n*2*. 📢 ```Reclamos```",
+        "services": {
+            "code": "s",
+            "text": "Conocé los servicios que la Municipalidad de Orán tiene para vos! 🧐: \n\n*1*. 🗑️ ```Recolección de residuos``` \n*2*. 🚚 ```Retiro de escombros o restos de poda```\n*3*. 🩺🦴 ```Castraciones y atención veterinaria```\n*4*. 🚛 ```Recolección diferenciada para empresas y comercios```\n*0*. 🔙 ```Volver al Menu Principal```",
+            "trash": {
+                "code": "s1",
+                "text": "¿En que zona de la ciudad vive?: \n\n*1*. ```Zona 1```\n*2*. ```Zona 2```\n*3*. ```Zona 3```\n*4*. ```En que zona estoy?```\n*0.*🔙 ```Volver al Menu Principal```",
+                "zone_1": {
+                    "code": "s1_1",
+                    "text": "Le informamos que el servicio de recolección de residuos para su zona pasa Lunes y Jueves entre las 22:00 a 23:59: \n\n*0.* 🔙 ```Volver al Menu Principal```\n*1.* 👎 ```No Pasó el servicio```",
+                    "claim": {
+                        "code": "c_trash_1",
+                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                    }
+                },
+                "zone_2": {
+                    "code": "s1_2",
+                    "text": "Le informamos que el servicio de recolección de residuos para su zona pasa Lunes y Jueves entre las 22:00 a 23:59: \n\n*0.* 🔙 ```Volver al Menu Principal```\n*1.* 👎 ```No Pasó el servicio```",
+                    "claim": {
+                        "code": "c_trash_2",
+                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                    }
+                },
+                "zone_3": {
+                    "code": "s1_3",
+                    "text": "Le informamos que el servicio de recolección de residuos para su zona pasa Lunes y Jueves entre las 22:00 a 23:59: \n\n*0.* 🔙 ```Volver al Menu Principal```\n*1.* 👎 ```No Pasó el servicio```",
+                    "claim": {
+                        "code": "c_trash_3",
+                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                    }
+                },
+                "which_zone": {
+                    "code": "s1_4",
+                    "text": "Te recordamos a que Zona perteneces dependiendo tu barrio!\n\nZona 1: Libertad/200 Años/Los Lapachos/Caballito/25 de Mayo/Barrio El Milagro/Parte de Barrio San Francisco/100 viviendas/Chatarrero/Zenta/Azucarero/Estación/San Expedito/Patrón Costas/Vialidad/200 viviendas/Aeroparque/Juan Garay\n\nZona 2:  20 de Febrero/60 y 40 viviendas/17 de Agosto/Parte San Francisco/Barrio Norte/San Martín/Catedral/Jardín/Güemes/Santa Bárbara/Obispo Muguerza/11 de Septiembre/Eliseo Barberá/Primavera/Belgrano/Osvaldo Pos/238 viviendas/266 viviendas\n\nZona 3: Retambay/San Ramón/Juventud Unida/12 de Octubre/San Juan/Maravillas/Balut/Knudsen/Malvinas/Asentamiento 4 de Junio/Piacenza/Santa Rita/9 de Julio/2 de Abril/6 enero/San Antonio/Madereros/17 de Octubre/San Cayetano/Constituyentes/1° de Mayo/Pueyrredón/Independencia/San José/Evita/Juan Taranto/Loteo Social/OTC/Policial/Kirchner/Campo Chico"
+                }
+            },
+            "debris": {
+                "code": "s2",
+                "text": "La Municipalidad ya no brinda estos servicios de manera particular, pero consulta las empresas habilitadas en el siguiente link:www.oran.gob.ar/EMPRESAS PRIVADAS DE SERVICIOS \n\n*0*. 🔙 ```Volver al Menu Principal```"
+            },
+            "vet": {
+                "code": "s3",
+                "text": "El centro veterinario Patitas Callejeras está ubicado en la calle Dorrego esq Yrigoyen y en el siguiente link podes consultar horarios y actividades de bienestar animal www.oran.gob.ar/bienestaranimal ----- ver de poner numero\n\n*0*. 🔙 ```Volver al Menu Principal"
+            },
+            "difer_collect": {
+                "code": "s4",
+                "text": "Las empresas que generen residuos habitualmente están obligadas a pagar un servicio diferencial, accedé a este link y conoce como podes incribirte. www.oran.gob.ar/recolecciondiferencial\n\n*0*. 🔙 ```Volver al Menu Principal"
+            }
+        },
+        "claims": {
+            "code": "c",
+            "text": "Que tipo de reclamo le gustaria hacer?\n\n*1*. ```Recolección y limpieza``` \n*2*. ```Alumbrado público```\n*3*. ```Dengue, malezas y terrenos en mal estado```\n*4*. ```Vehículos mal estacionados```\n*5*. ```Reclamos vecinales```\n*6*. ```Postes y árboles caidos```\n*7*. ```Baches y calles en mal estado```\n*8*. ```Otro```\n*0.* 🔙 ```Volver al Menu Principal``` ",
+            "claim": {
+                "code": "c_n",
+                "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+            }
+        }
+    }
+}

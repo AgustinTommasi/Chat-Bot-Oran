@@ -1,0 +1,31 @@
+version: '3.1' # Usa la versión 3.1 de Docker Compose
+
+networks:
+  montana:
+    driver: bridge
+
+volumes:
+  mysql:
+    name: chat-bot-mysql
+
+services:
+  mysql:
+    container_name: ChatBot-MySQL
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      montana:
+        aliases:
+          - mysql
+
+##   apiUrl: 'https://chat.systemart.com.ar'
+## docker-compose up --build -d
