@@ -1,7 +1,6 @@
 import { RowDataPacket } from 'mysql2';
 import { Conversation } from '../interfaces/conversation';
 import { connect } from './db_connection'
-import 'dotenv/config';
 
 export async function loadConversation(user: string) {
     const conn = await connect();

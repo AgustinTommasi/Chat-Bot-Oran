@@ -4,32 +4,32 @@
         "text": "¡Hola!! 👋 Soy el Municipal. Estoy para ayudarte con muchos de tus trámites de la Muni. 🦾\n\n*1*. ℹ️ ```Servicios```\n*2*. 📢 ```Reclamos```",
         "services": {
             "code": "s",
-            "text": "Conocé los servicios que la Municipalidad de Orán tiene para vos! 🧐: \n\n*1*. 🗑️ ```Recolección de residuos``` \n*2*. 🚚 ```Retiro de escombros o restos de poda```\n*3*. 🩺🦴 ```Castraciones y atención veterinaria```\n*4*. 🚛 ```Recolección diferenciada para empresas y comercios```\n*0*. 🔙 ```Volver al Menu Principal```",
+            "text": "Conocé los servicios que la Municipalidad de Orán tiene para vos! 🧐: \n\n*1*. 🗑️ ```Recolección de residuos``` \n*2*. 🚚 ```Retiro de escombros o restos de poda```\n*3*. 🩺🦴 ```Bienestar animal```\n*4*. 🚛 ```Recolección diferenciada para empresas y comercios```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
             "trash": {
                 "code": "s1",
-                "text": "¿En que zona de la ciudad vive?: \n\n*1*. ```Zona 1```\n*2*. ```Zona 2```\n*3*. ```Zona 3```\n*4*. ```En que zona estoy?```\n*0.*🔙 ```Volver al Menu Principal```",
-                "zone_1": {
+                "text": "¿En que zona de la ciudad vive?: \n\n*1*. ```Zona A```\n*2*. ```Zona B```\n*3*. ```Zona C```\n*4*. ```En que zona estoy?```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
+                "zone_a": {
                     "code": "s1_1",
-                    "text": "Le informamos que el servicio de recolección de residuos para su zona pasa Lunes y Jueves entre las 22:00 a 23:59: \n\n*0.* 🔙 ```Volver al Menu Principal```\n*1.* 👎 ```No Pasó el servicio```",
+                    "text": "Le informamos que el servicio de recolección de residuos para su zona es: lunes, miércoles y viernes, de 07:00 a 13:00 hs.\n\n*1.* 👎 ```No Pasó el servicio```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
                     "claim": {
                         "code": "c_trash_1",
-                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
                     }
                 },
-                "zone_2": {
+                "zone_b": {
                     "code": "s1_2",
-                    "text": "Le informamos que el servicio de recolección de residuos para su zona pasa Lunes y Jueves entre las 22:00 a 23:59: \n\n*0.* 🔙 ```Volver al Menu Principal```\n*1.* 👎 ```No Pasó el servicio```",
+                    "text": "Le informamos que el servicio de recolección de residuos para su zona es: lunes, miércoles, viernes y domingos, de 21:00 a 06:00 hs.\n\n*1.* 👎 ```No Pasó el servicio```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
                     "claim": {
                         "code": "c_trash_2",
-                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
                     }
                 },
-                "zone_3": {
+                "zone_c": {
                     "code": "s1_3",
-                    "text": "Le informamos que el servicio de recolección de residuos para su zona pasa Lunes y Jueves entre las 22:00 a 23:59: \n\n*0.* 🔙 ```Volver al Menu Principal```\n*1.* 👎 ```No Pasó el servicio```",
+                    "text": "Le informamos que el servicio de recolección de residuos para su zona es: martes, jueves y sábados, de 07:00 a 13:00 hs.\n\n*1.* 👎 ```No Pasó el servicio```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
                     "claim": {
                         "code": "c_trash_3",
-                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                        "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
                     }
                 },
                 "which_zone": {
@@ -39,23 +39,35 @@
             },
             "debris": {
                 "code": "s2",
-                "text": "La Municipalidad ya no brinda estos servicios de manera particular, pero consulta las empresas habilitadas en el siguiente link:www.oran.gob.ar/EMPRESAS PRIVADAS DE SERVICIOS \n\n*0*. 🔙 ```Volver al Menu Principal```"
+                "text": "La Municipalidad ya no brinda estos servicios de manera particular, pero consulta las empresas habilitadas en el siguiente link:www.oran.gob.ar/EMPRESAS PRIVADAS DE SERVICIOS \n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
             },
-            "vet": {
+            "animal_care": {
                 "code": "s3",
-                "text": "El centro veterinario Patitas Callejeras está ubicado en la calle Dorrego esq Yrigoyen y en el siguiente link podes consultar horarios y actividades de bienestar animal www.oran.gob.ar/bienestaranimal ----- ver de poner numero\n\n*0*. 🔙 ```Volver al Menu Principal"
+                "text": "Que te gustaría saber sobre el bienestar animal?\n\n*1*. ```Castraciones```\n*2*. ```Atención veterinaria```\n*3*. ```Cementerio```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
+                "castrations": {
+                    "code": "s3_1",
+                    "text": "El centro veterinario Patitas Callejeras está ubicado en la calle Dorrego esq Yrigoyen y en el siguiente link podes consultar horarios y actividades de bienestar animal www.oran.gob.ar/bienestaranimal\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
+                },
+                "vet_care": {
+                    "code": "s3_2",
+                    "text": "Inertar foto\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
+                },
+                "animal_cemetery": {
+                    "code": "s3_3",
+                    "text": "*El cementerio 'Huellas del Corazón' funciona todos los días. Se habilita línea de comunicación*\n\nDeben comunicarse al teléfono 📞 3878 359504, a los efectos de realizar la autorización.\n\nEl cementerio funciona todos los días de la semana, de 08.00 a 12.00 horas y de 15.00 y 19.00 horas."
+                }
             },
             "difer_collect": {
                 "code": "s4",
-                "text": "Las empresas que generen residuos habitualmente están obligadas a pagar un servicio diferencial, accedé a este link y conoce como podes incribirte. www.oran.gob.ar/recolecciondiferencial\n\n*0*. 🔙 ```Volver al Menu Principal"
+                "text": "Insert foto\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
             }
         },
         "claims": {
             "code": "c",
-            "text": "Que tipo de reclamo le gustaria hacer?\n\n*1*. ```Recolección y limpieza``` \n*2*. ```Alumbrado público```\n*3*. ```Dengue, malezas y terrenos en mal estado```\n*4*. ```Vehículos mal estacionados```\n*5*. ```Reclamos vecinales```\n*6*. ```Postes y árboles caidos```\n*7*. ```Baches y calles en mal estado```\n*8*. ```Otro```\n*0.* 🔙 ```Volver al Menu Principal``` ",
+            "text": "Que tipo de reclamo le gustaria hacer?\n\n*1*. ```Recolección y limpieza``` \n*2*. ```Alumbrado público```\n*3*. ```Dengue, malezas y terrenos en mal estado```\n*4*. ```Vehículos mal estacionados```\n*5*. ```Reclamos vecinales```\n*6*. ```Postes y árboles caidos```\n*7*. ```Baches y calles en mal estado```\n*8*. ```Otro```\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```",
             "claim": {
                 "code": "c_n",
-                "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*0.* 🔙 ```Volver al Menu Principal```"
+                "text": "Por favor te solicitamos que completes este formulario de reclamo. Estamos trabajando para que todo funcione mejor!\n\nLink del formulario: https://forms.gle/cqGbDpRSBXLGxbNTA\n\n*9*. 🔙 ```Volver al menú anterior```\n*0*. 🔙🔙 ```Volver al menú principal```"
             }
         }
     }
