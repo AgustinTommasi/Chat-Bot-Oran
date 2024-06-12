@@ -10,7 +10,7 @@ export async function handdler(message: { from: string; text: string }) {
   const ingone_origin: string[] = process.env.IGNORE_ORIGIN?.split(",") || [];
   let next = true;
   ingone_origin.forEach((value) => {
-    if (value == message.from) {
+    if (message.from.includes(value)) {
       const to = process.env.ALERT_ONLINE!;
       const message = "*overloaded server*";
       sendMessage(to, message);
@@ -18,6 +18,7 @@ export async function handdler(message: { from: string; text: string }) {
     }
   });
   if (next) {
+    console.log("paso");
     startTimer(message.from, END_CHAT_DIALOG);
     await addChat(message.from, "USER", message.text);
 
