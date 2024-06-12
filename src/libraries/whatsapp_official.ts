@@ -1,5 +1,7 @@
 import WhatsApp from "whatsapp";
-import "dotenv/config";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const { RECIPIENT_WAID, WA_PHONE_NUMBER_ID } = process.env;
 
@@ -16,7 +18,7 @@ export async function send_message() {
       recipient_number
     );
 
-    await sent_text_message.then((res) => {
+    await sent_text_message.then((res: any) => {
     //  console.log(res.rawResponse());
     });
   } catch (e) {

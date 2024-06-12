@@ -1,20 +1,39 @@
-import fs from 'fs';
-import util from 'util';
-import { client } from './libraries/whatsapp_client';
-import { archiveAll } from './libraries/db_functions';
-import { send_message } from './libraries/whatsapp_official';
- import app from "./libraries/websockets";
+// Log libraries
+import fs from "fs";
+import util from "util";
+// alternative whatsapp client
+import { connectWhatsApp as connectAlternativeWhatsApp } from "./libraries/whatsapp_alternative";
+// official whatsapp client
+// import { send_message } from "./libraries/whatsapp_official";
+import { connectWhatsApp as connectOfficialWhatsApp } from "./libraries/websockets_official";
+// Archive chats
+import { archiveAll } from "./libraries/db_functions";
 
-const logFile = fs.createWriteStream(__dirname + '/debug.log', { flags: 'a' });
+// Read .env
+import dotenv from "dotenv";
+dotenv.config();
+
+// Log console
+const logFile = fs.createWriteStream(__dirname + "/debug.log", { flags: "a" });
 const logStdout = process.stdout;
 
 console.log = (d: any) => {
-    logFile.write(util.format(d) + '\n');
-    logStdout.write(util.format(d) + '\n');
+  logFile.write(util.format(d) + "\n");
+  logStdout.write(util.format(d) + "\n");
 };
-archiveAll()
-console.log('STARTING...');
-// client.initialize();
 
-//send_message();
-app;
+console.log("STARTING...");
+
+// Archive all chats at the beginning.
+if (process.env.ARCHIVE_CHATS?.toLowerCase() === "true") {
+  archiveAll();
+}
+
+// Chat engine selector
+if (process.env.OFFICIAL_WHATSAPP?.toLowerCase() === "true") {
+  connectOfficialWhatsApp();
+  // test porpose
+  // send_message();
+} else {
+  connectAlternativeWhatsApp();
+}

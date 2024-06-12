@@ -1,7 +1,5 @@
-version: '3.1' # Usa la versión 3.1 de Docker Compose
-
 networks:
-  montana:
+  chat-bot-network:
     driver: bridge
 
 volumes:
@@ -10,7 +8,7 @@ volumes:
 
 services:
   mysql:
-    container_name: ChatBot-MySQL
+    container_name: ${CONTAINER_NAME}
     image: mysql:latest
     restart: always
     environment:
@@ -22,10 +20,16 @@ services:
       - "${MYSQL_PORT}:3306"
     volumes:
       - mysql:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d/
     networks:
-      montana:
+      chat-bot-network:
         aliases:
           - mysql
-
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      
 ##   apiUrl: 'https://chat.systemart.com.ar'
 ## docker-compose up --build -d
