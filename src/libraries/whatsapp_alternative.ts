@@ -8,10 +8,19 @@ import { handdler } from "./business_rules";
 // Aquí puedes mantener la configuración del cliente
 const client = new Client({
   puppeteer: {
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    executablePath: "/usr/bin/google-chrome-stable",
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-accelerated-2d-canvas",
+      "--no-first-run",
+      "--no-zygote",
+      "--disable-gpu",
+    ],
   },
   authStrategy: new LocalAuth(),
-  webVersion: "2.2412.54",
   webVersionCache: {
     type: "remote",
     remotePath:
