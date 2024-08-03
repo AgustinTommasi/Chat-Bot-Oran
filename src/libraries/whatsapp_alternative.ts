@@ -7,20 +7,8 @@ import { handdler } from "./business_rules";
 
 // Aquí puedes mantener la configuración del cliente
 const client = new Client({
-  puppeteer: {
-    executablePath: "/usr/bin/google-chrome-stable",
-    headless: true,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-accelerated-2d-canvas",
-      "--no-first-run",
-      "--no-zygote",
-      "--disable-gpu",
-    ],
-  },
   authStrategy: new LocalAuth(),
+  webVersion: "2.2412.54",
   webVersionCache: {
     type: "remote",
     remotePath:
@@ -52,6 +40,9 @@ export const connectWhatsApp = () => {
   });
 
   client.on("message", async (message: Message) => {
+    if (message.from.startsWith("status")) return; // add this line
+
+    console.log(message);
     if (message.body === "!ping") {
       const reply = "```pong```";
       message.reply(reply);
@@ -62,7 +53,14 @@ export const connectWhatsApp = () => {
   });
 };
 
+export async function sendReply(message: Message, reply: string) {
+  console.log(reply);
+  message.reply(reply);
+}
+
 export async function sendMessage(number: string, message: string) {
   const chatId = `${number}@c.us`;
+  console.log(number);
+
   client.sendMessage(chatId, message);
 }

@@ -5,8 +5,23 @@ networks:
 volumes:
   mysql:
     name: chat-bot-mysql
+  chat-bot-app:
+    name: chat-bot-app
 
 services:
+  node:
+    container_name: Chat-Bot
+    restart: on-failure
+    build:
+      context: .
+    volumes:
+      - chat-bot-app:/home/node/app/tmp
+    ports:
+      - "${PORT}:12345"
+    networks:
+      chat-bot-network:
+        aliases:
+          - mysql
   mysql:
     container_name: ${CONTAINER_NAME}
     image: mysql:latest
@@ -17,7 +32,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
-      - "${MYSQL_PORT}:3306"
+      - "${EXTERNAL_MYSQL_PORT}:3306"
     volumes:
       - mysql:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d/
@@ -25,11 +40,7 @@ services:
       chat-bot-network:
         aliases:
           - mysql
-    healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      
+
 ##   apiUrl: 'https://chat.systemart.com.ar'
 ## docker-compose up --build -d
+
