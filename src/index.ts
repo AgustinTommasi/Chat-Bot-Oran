@@ -8,6 +8,8 @@ import { connectWhatsApp as connectAlternativeWhatsApp } from "./libraries/whats
 import { connectWhatsApp as connectOfficialWhatsApp } from "./libraries/websockets_official";
 // Archive chats
 import { archiveAll } from "./libraries/db_functions";
+// Import the server
+import { startServer } from "./server";
 
 // Read .env
 import dotenv from "dotenv";
@@ -37,3 +39,6 @@ if (process.env.OFFICIAL_WHATSAPP?.toLowerCase() === "true") {
 } else {
   connectAlternativeWhatsApp();
 }
+
+// Start the server
+startServer();

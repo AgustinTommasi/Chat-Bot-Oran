@@ -7,22 +7,29 @@ CREATE TABLE `conversations` (
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
-
 CREATE TABLE `chats` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `conversation_id` INT NOT NULL,
   `role` VARCHAR(40) NOT NULL,
   `content` TEXT NOT NULL,
   `code` TEXT NULL,
+  `message_id` VARCHAR(255) NULL,  -- Nuevo campo
+  `message_ack` INT NULL,          -- Nuevo campo
   `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`conversation_id`) REFERENCES `conversations`(`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
-
 DELIMITER $$
 
-CREATE PROCEDURE InsertConversationAndChat(IN conv_number BIGINT, IN chat_role VARCHAR(40), IN chat_content TEXT, IN chat_code VARCHAR(40))
+CREATE PROCEDURE InsertConversationAndChat(
+    IN conv_number BIGINT, 
+    IN chat_role VARCHAR(40), 
+    IN chat_content TEXT, 
+    IN chat_code VARCHAR(40),
+    IN chat_message_id VARCHAR(255),  -- Nuevo parámetro
+    IN chat_message_ack INT           -- Nuevo parámetro
+)
 BEGIN
     DECLARE new_conversation_id INT;
     DECLARE existing_conversation_id INT;
@@ -42,5 +49,22 @@ BEGIN
     END IF;
 
     -- Inserta una nueva entrada en chats con el conversation_id obtenido.
-    INSERT INTO chats (conversation_id, role, content, code) VALUES (new_conversation_id, chat_role, chat_content, chat_code);
+    INSERT INTO chats (
+        conversation_id, 
+        role, 
+        content, 
+        code, 
+        message_id,    -- Nuevo campo
+        message_ack    -- Nuevo campo
+    ) 
+    VALUES (
+        new_conversation_id, 
+        chat_role, 
+        chat_content, 
+        chat_code,
+        chat_message_id,  -- Nuevo valor
+        chat_message_ack  -- Nuevo valor
+    );
 END$$
+
+DELIMITER ;

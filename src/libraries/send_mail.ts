@@ -22,7 +22,7 @@ export async function sendEmail(to: string, subject: string, html: string): Prom
 
     try {
         let info = await transporter.sendMail(mailOptions);
-        console.log("Message sent: %s", info.messageId);
+        console.log("Email sent: %s", info.messageId);
     } catch (error) {
         console.error("Error sending email: ", error);
     }

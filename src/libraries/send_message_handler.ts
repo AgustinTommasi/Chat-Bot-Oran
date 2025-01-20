@@ -1,6 +1,6 @@
 import { sendMessage as officialSendMessage } from "./websockets_official";
 import { sendMessage as alternativeSendMessage } from "./whatsapp_alternative";
-import { addChat } from "./db_functions";
+import { addChat, changeAck } from "./db_functions";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -8,7 +8,8 @@ export async function sendMessage(
   user: string,
   message: string,
   code?: string
-) {
+): Promise<string | undefined> {
+  let ack;
   if (process.env.OFFICIAL_WHATSAPP?.toLowerCase() === "true") {
     officialSendMessage({
       messaging_product: "whatsapp",
@@ -16,9 +17,15 @@ export async function sendMessage(
       text: { body: message },
     });
   } else {
-    alternativeSendMessage(user, message);
+    ack = await alternativeSendMessage(user, message);
   }
-  await addChat(user, "BOT", message, code);
+  await addChat(user, "BOT", message, code, ack?.id.id, ack?.ack);
+
+  return ack?.id.id;
+}
+
+export async function messageAck(id: string, ack: number) {
+  await changeAck(id, ack);
 }
 
 export async function sendList(

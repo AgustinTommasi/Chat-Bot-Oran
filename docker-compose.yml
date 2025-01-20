@@ -14,10 +14,12 @@ services:
     restart: on-failure
     build:
       context: .
+    env_file: 
+      - .env.docker
     volumes:
       - chat-bot-app:/home/node/app/tmp
     ports:
-      - "${PORT}:12345"
+      - "${EXTERNAL_SERVER_PORT}:${SERVER_PORT}"
     networks:
       chat-bot-network:
         aliases:
@@ -43,4 +45,3 @@ services:
 
 ##   apiUrl: 'https://chat.systemart.com.ar'
 ## docker-compose up --build -d
-

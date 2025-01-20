@@ -1,6 +1,6 @@
 # Filename: Dockerfile
 
-FROM node
+FROM node:21
 
 # Install chromium
 RUN apt-get update && apt-get install -y chromium
