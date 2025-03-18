@@ -21,7 +21,7 @@ app.post("/api/send-whatsapp", async (req, res) => {
     res.json({
       success: true,
       message_id,
-      message: "Message sent successfully",
+      message: "Mensaje enviado correctamente",
     });
   } catch (error) {
     console.error("Error sending message:", error);

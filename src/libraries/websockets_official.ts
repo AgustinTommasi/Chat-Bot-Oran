@@ -11,7 +11,7 @@ const {
   WA_PHONE_NUMBER_ID,
   CLOUD_API_VERSION,
   CLOUD_API_ACCESS_TOKEN,
-  PORT,
+  WHATSAPP_PORT,
 } = process.env;
 
 export const connectWhatsApp = () => {
@@ -73,8 +73,47 @@ export const connectWhatsApp = () => {
   Checkout README.md to start.</pre>`);
   });
 
-  app.listen(PORT, () => {
-    console.log(`Server is listening on port: ${PORT}`);
+  app.listen(WHATSAPP_PORT, () => {
+    console.log(`Server is listening on port: ${WHATSAPP_PORT}`);
+  });
+
+  // Añade estos endpoints de prueba
+  app.get("/test", (req: any, res: any) => {
+    res.status(200).json({
+      status: "ok",
+      message: "Server is running",
+      timestamp: new Date().toISOString(),
+    });
+  });
+
+  app.get("/verify", (req: any, res: any) => {
+    res.status(200).json({
+      verify_token: VERIFY_TOKEN,
+      cloud_api_token: CLOUD_API_ACCESS_TOKEN
+        ? "Configurado"
+        : "No configurado",
+      wa_phone_id: WA_PHONE_NUMBER_ID ? "Configurado" : "No configurado",
+      api_version: CLOUD_API_VERSION || "No configurado",
+    });
+  });
+
+  // Endpoint de prueba para verificar el token
+  app.get("/token-test", async (req: any, res: any) => {
+    try {
+      const response = await axios({
+        method: "GET",
+        url: `https://graph.facebook.com/v21.0/me`,
+        headers: {
+          Authorization: `Bearer ${CLOUD_API_ACCESS_TOKEN}`,
+        },
+      });
+      res.json(response.data);
+    } catch (error: any) {
+      res.status(500).json({
+        error: "Token inválido",
+        details: error.response?.data || error.message,
+      });
+    }
   });
 };
 
@@ -90,7 +129,7 @@ export async function sendMessage(data: any) {
     });
     console.log("Message sent successfully");
   } catch (error) {
-    console.error("Error sending message:", error);
+    console.error("Error sending message:");
     throw error; // Rethrow the error if you want to handle it outside this function
   }
 }

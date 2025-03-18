@@ -19,9 +19,9 @@ export async function handdler(message: { from: string; text: string }) {
     }
   });
   if (next) {
-    startTimer(message.from, END_CHAT_DIALOG);
-    await addChat(message.from, "USER", message.text);
-    main(message);
+    // startTimer(message.from, END_CHAT_DIALOG);
+    // await addChat(message.from, "USER", message.text);
+    // main(message);
   }
 }
 
